@@ -54,11 +54,11 @@ main = (
                    and [final_i.__setitem__(0, i),
                         clen.__setitem__(0, i - seen[grid[0]]), False][-1])
                   ][-1]
-                 for i in range(1, 10 ** 9 + 1)),
+                 for i in range(10 ** 9)),
              final_i.__setitem__(0,
-                 final_i[0] + (10 ** 9 + 1 - final_i[0]) // clen[0] * clen[0]),
+                 final_i[0] + (10 ** 9 - final_i[0]) // clen[0] * clen[0]),
              [grid.__setitem__(0, spincycle(grid))
-              for i in range(final_i[0] + 1, 10 ** 9 + 1)],
+              for i in range(final_i[0] + 1, 10 ** 9)],
              print(sum(map(load, zip(*grid[0]))))]
     )(seen={grid[0]: 0}, clen=[None], final_i=[None])
 )
