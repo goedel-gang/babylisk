@@ -42,6 +42,7 @@ def starts(m, n):
         yield (0, j, 3)
         yield (m - 1, j, 1)
 
+# run in parallel. This is faster with CPython on my machine.
 from multiprocessing import Pool
 from functools import partial
 grid, m, n = parse()
